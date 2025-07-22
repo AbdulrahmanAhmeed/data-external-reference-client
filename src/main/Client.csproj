@@ -2,21 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>ei8.Data.ExternalReference.Client</AssemblyName>
-    <RootNamespace>ei8.Data.ExternalReference.Client</RootNamespace>
-    <PackageId>ei8.Data.ExternalReference.Client</PackageId>
+    <AssemblyName>ei8.Data.Mirror.Client</AssemblyName>
+    <RootNamespace>ei8.Data.Mirror.Client</RootNamespace>
+    <PackageId>ei8.Data.Mirror.Client</PackageId>
     <PackageVersion>0.1.1</PackageVersion>
     <Authors>Elmer Roderick Niem Bool</Authors>
-    <Description>ei8 Data ExternalReference Client</Description>
+    <Description>ei8 Data Mirror Client</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageTags>ei8 Data ExternalReference client</PackageTags>
+    <PackageTags>ei8 Data Mirror client</PackageTags>
     <Version>0.1.1</Version>
     <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\ei8.Data.ExternalReference.Client.xml</DocumentationFile>
+          <DocumentationFile>bin\Release\netstandard2.0\ei8.Data.Mirror.Client.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ei8.Data.ExternalReference.Common" Version="0.1.4" />
+    <PackageReference Include="ei8.Data.Mirror.Common" Version="0.1.4" />
     <PackageReference Include="ei8.EventSourcing.Common" Version="0.1.2" />
     <PackageReference Include="Neurul.Common" Version="0.1.19" />
     <PackageReference Include="Neurul.Common.Http" Version="0.1.13" />

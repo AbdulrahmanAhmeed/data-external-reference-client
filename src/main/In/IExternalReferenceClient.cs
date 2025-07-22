@@ -4,9 +4,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ei8.Data.ExternalReference.Client.In
+namespace ei8.Data.Mirror.Client.In
 {
-    public interface IExternalReferenceClient
+    public interface IMirrorClient
     {
         Task ChangeUrl(string inBaseUrl, string id, string newUrl, int expectedVersion, string authorId, CancellationToken token = default(CancellationToken));
     }

@@ -5,11 +5,11 @@ using Splat;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using ei8.Data.ExternalReference.Common;
+using ei8.Data.Mirror.Common;
 
-namespace ei8.Data.ExternalReference.Client.Out
+namespace ei8.Data.Mirror.Client.Out
 {
-    public class HttpExternalReferenceQueryClient : IExternalReferenceQueryClient
+    public class HttpMirrorQueryClient : IMirrorQueryClient
     {
         private readonly IRequestProvider requestProvider;
 
@@ -18,24 +18,24 @@ namespace ei8.Data.ExternalReference.Client.Out
             .WaitAndRetryAsync(
                 3,
                 attempt => TimeSpan.FromMilliseconds(100 * Math.Pow(2, attempt)),
-                (ex, _) => HttpExternalReferenceQueryClient.logger.Error(ex, "Error occurred while communicating with ei8 ExternalReference. " + ex.InnerException?.Message)
+                (ex, _) => HttpMirrorQueryClient.logger.Error(ex, "Error occurred while communicating with ei8 Mirror. " + ex.InnerException?.Message)
             );
-        private static readonly string GetExternalReferencesPathTemplate = "data/externalreferences";
+        private static readonly string GetMirrorsPathTemplate = "data/mirrors";
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
-        public HttpExternalReferenceQueryClient(IRequestProvider requestProvider = null)
+        public HttpMirrorQueryClient(IRequestProvider requestProvider = null)
         {
             this.requestProvider = requestProvider ?? Locator.Current.GetService<IRequestProvider>();
         }
 
         public async Task<ItemData> GetItemById(string outBaseUrl, string id, CancellationToken token = default(CancellationToken)) =>
-           await HttpExternalReferenceQueryClient.exponentialRetryPolicy.ExecuteAsync(
+           await HttpMirrorQueryClient.exponentialRetryPolicy.ExecuteAsync(
                async () => await this.GetItemByIdInternal(outBaseUrl, id, token).ConfigureAwait(false));
         
         private async Task<ItemData> GetItemByIdInternal(string outBaseUrl, string id, CancellationToken token = default)
         {
             return await requestProvider.GetAsync<ItemData>(
-                           $"{outBaseUrl}{HttpExternalReferenceQueryClient.GetExternalReferencesPathTemplate}/{id}",
+                           $"{outBaseUrl}{HttpMirrorQueryClient.GetMirrorsPathTemplate}/{id}",
                            token: token
                            );
         }

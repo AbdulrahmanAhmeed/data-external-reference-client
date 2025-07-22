@@ -2,21 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>ei8.Data.ExternalReference.Client.Test</AssemblyName>
-    <RootNamespace>ei8.Data.ExternalReference.Client.Test</RootNamespace>
-    <PackageId>ei8.Data.ExternalReference.Client</PackageId>
+    <AssemblyName>ei8.Data.Mirror.Client.Test</AssemblyName>
+    <RootNamespace>ei8.Data.Mirror.Client.Test</RootNamespace>
+    <PackageId>ei8.Data.Mirror.Client</PackageId>
     <PackageVersion>0.1.0</PackageVersion>
     <Authors>Elmer Roderick Niem Bool</Authors>
-    <Description>ei8 Data ExternalReference Client Test</Description>
+    <Description>ei8 Data Mirror Client Test</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageReleaseNotes></PackageReleaseNotes>
-    <PackageTags>ei8 Data ExternalReference Client Test</PackageTags>
+    <PackageTags>ei8 Data Mirror Client Test</PackageTags>
     <Version>0.1.0</Version>
     <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\ei8.Data.ExternalReference.Client.Test.xml</DocumentationFile>
+          <DocumentationFile>bin\Release\netstandard2.0\ei8.Data.Mirror.Client.Test.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
